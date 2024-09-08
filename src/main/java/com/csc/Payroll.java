@@ -12,19 +12,22 @@ public class Payroll {
         int numberOfHoursWorked = scanner.nextInt();
         System.out.print("Please enter number of dependants: ");
         int numberOfDependants = scanner.nextInt();
+        System.out.print("Please enter your hourly rate: ");
+        double hourlyRate = scanner.nextDouble();
         scanner.close();
         System.out.print("");
 
         double grossPay;
         if (numberOfHoursWorked <= 40) {
 
-            grossPay = numberOfHoursWorked * 16.78;
+            grossPay = numberOfHoursWorked * hourlyRate;
 
         } else {
 
             double overtime = numberOfHoursWorked - 40;
-            double beforeOvertime = 16.78 * 40;
-            double overtimePay = overtime * 25.17;
+            double beforeOvertime = hourlyRate * 40;
+            double timeandHalf = hourlyRate * 1.5;
+            double overtimePay = overtime * timeandHalf;
             grossPay = beforeOvertime + overtimePay;
         }
 
@@ -47,7 +50,7 @@ public class Payroll {
         System.out.println("=====================================");
         System.out.println("Hours Worked: " + numberOfHoursWorked);
         System.out.println("Number of dependants: " + numberOfDependants);
-        System.out.println("Hourly Rate: 16.78 $/hr");
+        System.out.println("Hourly Rate: " + hourlyRate + " $/hr");
         System.out.printf("Gross Pay: $%.2f\n", grossPay);
         System.out.println("");
         System.out.printf("Social Security Tax: $%.2f\n", ssTax);

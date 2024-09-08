@@ -15,12 +15,12 @@ public class TestGrosspay {
 
     @Test
     void testZeroHoursWorked() {
-        assertEquals(0, grosspay.grossPay(0), 0);
+        assertEquals(0, grosspay.grossPay(0), 0.001);
     }
 
     @Test
     void testFourtyHoursWorked() {
-        assertEquals(671.20, grosspay.grossPay(40));
+        assertEquals(671.20, grosspay.grossPay(40), 0.001);
     }
 
     @Test
