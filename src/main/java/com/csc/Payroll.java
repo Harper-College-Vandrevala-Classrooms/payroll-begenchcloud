@@ -47,7 +47,7 @@ public class Payroll {
         System.out.println("=====================================");
         System.out.println("Hours Worked: " + numberOfHoursWorked);
         System.out.println("Number of dependants: " + numberOfDependants);
-        System.out.println("Hourly Rate: 16.78");
+        System.out.println("Hourly Rate: 16.78 $/hr");
         System.out.printf("Gross Pay: $%.2f\n", grossPay);
         System.out.println("");
         System.out.printf("Social Security Tax: $%.2f\n", ssTax);
