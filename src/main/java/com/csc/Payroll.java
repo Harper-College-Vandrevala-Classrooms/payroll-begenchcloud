@@ -5,7 +5,7 @@ public class Payroll {
 
 
     public static void main(String[] args) {
-        
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the Payroll App!!!");
@@ -13,7 +13,6 @@ public class Payroll {
         System.out.print("Please enter number of hours worked this week: ");
         int numberOfHoursWorked = scanner.nextInt();
 
-        // Validation for dependants (treat negative number of children as 0)
         System.out.print("Please enter number of dependants: ");
         int numberOfDependants = scanner.nextInt();
         if (numberOfDependants < 0) {
@@ -84,8 +83,8 @@ public class Payroll {
         double netPay = grossPay - expenses;
 
         if (netPay < 0) {
-            double shortfall = -netPay;
             netPay = grossPay - (ssTax + fiTax + siTax);
+            System.out.println("");
             System.out.println("The employee still owes:");
             System.out.printf("   Union:   $%.2f\n", unionDues);
             System.out.printf("   Insurance:   $%.2f\n", insurance);
