@@ -82,15 +82,6 @@ public class Payroll {
         double expenses = ssTax + fiTax + siTax + unionDues + insurance + lifeInsuranceCost;
         double netPay = grossPay - expenses;
 
-        if (netPay < 0) {
-            netPay = grossPay - (ssTax + fiTax + siTax);
-            System.out.println("");
-            System.out.println("The employee still owes:");
-            System.out.printf("   Union:   $%.2f\n", unionDues);
-            System.out.printf("   Insurance:   $%.2f\n", insurance);
-            System.out.printf("   Life Insurance:   $%.2f\n", lifeInsuranceCost);
-        }
-
         System.out.println("Your payroll:");
         System.out.println("=====================================");
         System.out.println("Hours Worked: " + numberOfHoursWorked);
@@ -105,6 +96,15 @@ public class Payroll {
         System.out.printf("Insurance Cost: $%.2f\n", insurance);
         System.out.printf("Life Insurance: $%.2f\n", lifeInsuranceCost);
         System.out.printf("Total: $%.2f\n", expenses);
+        System.out.println("");
+        if (netPay < 0) {
+            netPay = grossPay - (ssTax + fiTax + siTax);
+            System.out.println("");
+            System.out.println("The employee still owes:");
+            System.out.printf("   Union:   $%.2f\n", unionDues);
+            System.out.printf("   Insurance:   $%.2f\n", insurance);
+            System.out.printf("   Life Insurance:   $%.2f\n", lifeInsuranceCost);
+        }
         System.out.println("");
         System.out.printf("Net Pay: $%.2f\n", netPay);
         System.out.println("=====================================");
